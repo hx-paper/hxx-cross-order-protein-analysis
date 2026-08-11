@@ -1,0 +1,4 @@
+interface:
+  display_name: "HXX Cross-order Protein Analysis"
+  short_description: "Thesis-ready protein alignment, tree, domains, and properties"
+  default_prompt: "Use $hxx-cross-order-protein-analysis to analyze my insect protein and generate the finalized cross-order thesis figures, tables, and concise Chinese text."
