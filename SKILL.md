@@ -1,12 +1,12 @@
 ---
 name: hxx-cross-order-protein-analysis
 description: >-
-  Analyze an insect protein from user-provided CDS and/or amino-acid sequence and produce HXX's standardized thesis-ready cross-order bioinformatics package, including NCBI homolog selection across Lepidoptera, Coleoptera, Diptera, Hymenoptera and Hemiptera, MUSCLE alignment, query-centred identity, IQ-TREE maximum-likelihood phylogeny with UFBoot, conserved-domain architecture, ProtParam-compatible physicochemical properties, compact ABC publication figures, three-line tables, and concise Chinese Methods, Results and legends. Use when the user says 分析我的蛋白, 蛋白跨目分析, 序列比对, 进化树加结构域, 理化性质, or asks to reproduce the finalized OBP/CREB/JHAMT/MRJP figure style.
+  Analyze an insect protein from user-provided CDS, amino-acid sequence, and optional CIF/PDB structure and produce HXX's standardized thesis-ready bioinformatics package, including NCBI cross-order homolog selection, MUSCLE alignment, query-centred identity, IQ-TREE maximum-likelihood phylogeny with UFBoot, conserved-domain architecture, ProtParam-compatible physicochemical properties, SAVES/PROCHECK structure validation, classic red-yellow and publication teal-yellow Ramachandran plots, compact vector figures, three-line tables, and concise Chinese Methods, Results and legends for every figure. Use when the user says 分析我的蛋白, 蛋白跨目分析, 序列比对, 进化树加结构域, 理化性质, 拉氏图, Ramachandran plot, PROCHECK, 蛋白结构评价, or asks to reproduce the finalized OBP/CREB/JHAMT/MRJP figure style.
 ---
 
 # HXX cross-order protein analysis
 
-Produce a complete, reproducible protein-analysis folder while keeping scientific claims conservative. Read [references/final-style-spec.md](references/final-style-spec.md) before drawing. Read [references/output-contract.md](references/output-contract.md) before creating files.
+Produce a complete, reproducible protein-analysis folder while keeping scientific claims conservative. Read [references/final-style-spec.md](references/final-style-spec.md) before drawing, [references/ramachandran-workflow.md](references/ramachandran-workflow.md) before structure validation, [references/thesis-text-spec.md](references/thesis-text-spec.md) before writing, and [references/output-contract.md](references/output-contract.md) before creating files.
 
 ## 1. Validate input
 
@@ -55,7 +55,18 @@ Run `scripts/scaffold_protein_project.py <output-root> <protein-name>` and keep 
 
 Run `scripts/calculate_physicochemical.py <protein.fasta> <protein-name> <output-dir>`. Report amino-acid length, molecular weight, theoretical pI, acidic/basic residues, molecular formula, atom count, 280-nm extinction coefficient, instability index, aliphatic index, GRAVY and N-end-rule half-life. Interpret instability index `<40` as predicted stable and `>40` as predicted unstable. State that calculations use the complete sequence without cleavage or post-translational modification.
 
-## 8. Draw and export
+## 8. Validate a predicted structure and draw Ramachandran plots
+
+- When a CIF or PDB model is supplied, verify chain, residue count, missing backbone atoms and sequence correspondence before analysis. Do not infer a structure from sequence alone unless the user explicitly requests structure prediction.
+- Convert AlphaFold/ModelCIF to standard PDB with `scripts/convert_modelcif_to_pdb.py <input.cif> <output.pdb>` before SAVES submission.
+- Submit the PDB to UCLA SAVES and run PROCHECK. Preserve the original job URL, job number, version, official plot, summary and detailed report. Treat these files as the authoritative region statistics.
+- Run `scripts/render_ramachandran_dual_palette.py` with the structure, official PROCHECK plot and summary. Generate both required renderings from the same official boundaries and statistics:
+  1. classic PROCHECK-inspired red/yellow palette;
+  2. publication teal/yellow palette.
+- Export each rendering as 600-dpi PNG, PDF and editable SVG, plus residue-level phi/psi CSV, JSON summary and an automatically populated concise Chinese Methods/Results/legend file.
+- Never present locally approximated favored/allowed regions as official PROCHECK scores. Explain that PROCHECK evaluates stereochemical plausibility and does not experimentally validate a predicted conformation. Follow [references/ramachandran-workflow.md](references/ramachandran-workflow.md).
+
+## 9. Draw and export sequence figures
 
 - Panel A: compact rectangular ML tree plus aligned domain architecture.
 - Panel B: query-centred identity lollipop/dot plot grouped by insect order.
@@ -64,13 +75,14 @@ Run `scripts/calculate_physicochemical.py <protein.fasta> <protein-name> <output
 - Apply the exact typography, palette, geometry and QA rules in [references/final-style-spec.md](references/final-style-spec.md).
 - Use Matplotlib or equivalent vector-capable plotting. Embed editable text in PDF/SVG (`pdf.fonttype=42`, `svg.fonttype=none`) when possible.
 
-## 9. Write thesis text
+## 10. Write thesis text for every output
 
-Write one concise Methods paragraph, one concise Results paragraph and one short figure legend. Include only the most informative values: protein length, identity range and maximum, key UFBoot value, domain coordinates and E-value. Avoid listing every order-specific range or weak deep node unless it changes the interpretation. Use “支持/表明/初步注释” rather than claiming verified biochemical function.
+Create one consolidated thesis file following [references/thesis-text-spec.md](references/thesis-text-spec.md). For every generated figure and physicochemical table, provide a short Methods paragraph, a short Results paragraph containing the actual values, and a figure/table legend. Cover tree-domain architecture, query-centred identity, full-length alignment, classic Ramachandran plot, publication Ramachandran plot and physicochemical table. Do not duplicate the same long explanation for the two Ramachandran palettes; state that they visualize identical data. Use “支持/表明/初步注释” rather than claiming verified biochemical function.
 
-## 10. Verify before completion
+## 11. Verify before completion
 
 - Render PDFs to images and inspect at final size.
 - Confirm 10-pt body text is legible; bootstrap labels are 8 pt, transparent and off all lines; query is first, red and present in the domain panel; bars are aligned and not clipped; panels are compact; all names/accessions/domains match source data.
-- Confirm all expected folders, raw data, scripts, separate PDFs, combined PDF/PNG/SVG, physicochemical TSV/JSON and concise thesis text exist.
+- Confirm all expected folders, raw data, scripts, separate PDFs, combined PDF/PNG/SVG, both Ramachandran palettes, official PROCHECK files, phi/psi CSV, physicochemical TSV/JSON and concise thesis text for every figure exist.
+- Confirm the two Ramachandran versions have identical points, counts, flagged residues and percentages; only the palette and presentation may differ.
 - Report unresolved sequence, annotation or topology uncertainty explicitly.
