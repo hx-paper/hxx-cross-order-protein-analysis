@@ -68,6 +68,17 @@ Use one palette in all panels and all proteins:
 - Use orange for cysteine where biologically relevant; show signal peptide and mature-region cysteines for secreted OBPs when supported.
 - Add subtle order-color strips and very light order-group shading; avoid heavy grid lines.
 
+### Ramachandran plots
+
+- Generate two standalone versions from identical phi/psi coordinates and official PROCHECK region statistics.
+- Classic version: most favoured `#F50000`, additionally allowed `#FFF200`, generously allowed `#FFF9A6`, disallowed `#FFFFFF`.
+- Publication version: most favoured `#5FA8A0`, additionally allowed `#B9DCD5`, generously allowed `#F4E6A2`, disallowed `#FAFAFA`.
+- Use official PROCHECK/SAVES region boundaries. Do not substitute ellipses or locally approximated regions in thesis figures.
+- Use Arial; axis and legend text about 10 pt, panel title 12–13 pt, and residue annotations 8 pt. Keep phi and psi axes square from -180° to 180°.
+- Show other residues, glycine and proline with distinguishable shapes. Highlight and label disallowed residues; keep annotations off data points and axes.
+- Add a horizontal four-class percentage bar below the plot. State the non-Gly/Pro denominator and the counts in most favoured/additionally allowed/generously allowed/disallowed order.
+- Export each palette as 600-dpi PNG, PDF and editable SVG. Preserve the original official PROCHECK PNG/PDF separately.
+
 ### Deliverable QA
 
 - Inspect PNG at 100% and render every PDF before delivery.
@@ -75,3 +86,4 @@ Use one palette in all panels and all proteins:
 - Inspect the bottom-most clade and scale bar separately.
 - Check the target domain track, domain name, domain coordinates, protein lengths and row alignment.
 - Confirm no obsolete circular tree remains in the final ABC figure.
+- Compare both Ramachandran variants programmatically: point count, official percentages, class counts and flagged residues must match exactly.
