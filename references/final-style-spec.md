@@ -1,11 +1,11 @@
 # Finalized figure style and revision ledger
 
-## What changed during OBP, CREB, JHAMT and MRJP revision
+## What changed during Protein A, B, C and D revision
 
 - Increased all main labels and alignment text to 10 pt because the first combined figure was too small.
 - Exported panels A, B and C separately as PDFs, plus a combined ABC figure.
 - Replaced circular phylogenies in the combined figures with compact rectangular trees paired with domain architecture.
-- Changed CREB from a short conserved-region display to a compressed full-length alignment, normally split across 2–3 blocks.
+- Changed Protein B from a short conserved-region display to a compressed full-length alignment, normally split across 2–3 blocks.
 - Moved the target protein to the first/top position in every tree without changing topology.
 - Reduced tree branch display width and outer whitespace repeatedly to make the whole figure compact.
 - Moved domain tracks closer to the tree and shortened their display by about one quarter.
@@ -13,7 +13,7 @@
 - Replaced database codes in legends with simple, accurate biological domain names; retained full names when clarity required them.
 - Removed repeated labels describing the domain-evaluation database from the figure itself.
 - Restored the missing target-protein domain track and required it in every future figure.
-- Reduced bootstrap text to 8 pt, removed white label boxes, and manually repositioned every number so none overlaps a branch. Dense CREB and bottom-clade regions require special inspection.
+- Reduced bootstrap text to 8 pt, removed white label boxes, and manually repositioned every number so none overlaps a branch. Dense Protein B and bottom-clade regions require special inspection.
 - Simplified thesis Methods and Results to short paragraphs with only key numerical evidence; mention UFBoot only.
 
 ## Fixed visual system
@@ -51,7 +51,7 @@ Use one palette in all panels and all proteins:
 - Show protein length at the right edge in subtle gray when useful.
 - Use a light gray glossy backbone and saturated glossy domain fill with top highlight and bottom shadow. Avoid cartoonish bevels.
 - Keep bars visually wide enough to read and domain lengths proportional to the full protein.
-- Use a short, accurate legend such as `MRJP/yellow family domain` or the full biological name `S-adenosyl-L-methionine-dependent methyltransferase domain`; never substitute a database accession for the name.
+- Use a short, accurate legend such as `conserved family domain` or a verified full biological domain name; never substitute a database accession for the name.
 
 ### Identity panel
 
@@ -65,7 +65,7 @@ Use one palette in all panels and all proteins:
 - Display the complete alignment. Split wide alignments into 2–3 compact blocks.
 - Put the query first, bold and red-labeled.
 - Use black background/white residue for exact conservation >=70%; medium gray background/dark residue for physicochemical similarity >=70%.
-- Use orange for cysteine where biologically relevant; show signal peptide and mature-region cysteines for secreted OBPs when supported.
+- Use orange for cysteine where biologically relevant; show signal peptide and mature-region cysteines for secreted proteins when supported.
 - Add subtle order-color strips and very light order-group shading; avoid heavy grid lines.
 
 ### Ramachandran plots

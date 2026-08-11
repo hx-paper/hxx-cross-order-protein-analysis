@@ -1,4 +1,4 @@
 interface:
-  display_name: "HXX Cross-order Protein Analysis"
+  display_name: "Cross-order Protein Analysis"
   short_description: "Protein trees, domains, properties, and Ramachandran plots"
   default_prompt: "Use $hxx-cross-order-protein-analysis to analyze my insect protein and structure, generate both Ramachandran palettes, and write concise Chinese thesis text for every figure."

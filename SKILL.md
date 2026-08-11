@@ -1,10 +1,10 @@
 ---
 name: hxx-cross-order-protein-analysis
 description: >-
-  Analyze an insect protein from user-provided CDS, amino-acid sequence, and optional CIF/PDB structure and produce HXX's standardized thesis-ready bioinformatics package, including NCBI cross-order homolog selection, MUSCLE alignment, query-centred identity, IQ-TREE maximum-likelihood phylogeny with UFBoot, conserved-domain architecture, ProtParam-compatible physicochemical properties, SAVES/PROCHECK structure validation, classic red-yellow and publication teal-yellow Ramachandran plots, compact vector figures, three-line tables, and concise Chinese Methods, Results and legends for every figure. Use when the user says 分析我的蛋白, 蛋白跨目分析, 序列比对, 进化树加结构域, 理化性质, 拉氏图, Ramachandran plot, PROCHECK, 蛋白结构评价, or asks to reproduce the finalized OBP/CREB/JHAMT/MRJP figure style.
+  Analyze an insect protein from user-provided CDS, amino-acid sequence, and optional CIF/PDB structure and produce a standardized manuscript-ready bioinformatics package, including NCBI cross-order homolog selection, MUSCLE alignment, query-centred identity, IQ-TREE maximum-likelihood phylogeny with UFBoot, conserved-domain architecture, ProtParam-compatible physicochemical properties, SAVES/PROCHECK structure validation, classic red-yellow and publication teal-yellow Ramachandran plots, compact vector figures, three-line tables, and concise Chinese Methods, Results and legends for every figure. Use when the user says 分析我的蛋白, 蛋白跨目分析, 序列比对, 进化树加结构域, 理化性质, 拉氏图, Ramachandran plot, PROCHECK, 蛋白结构评价, or asks to reproduce the finalized Protein A/B/C/D anonymous figure style.
 ---
 
-# HXX cross-order protein analysis
+# Cross-order protein analysis
 
 Produce a complete, reproducible protein-analysis folder while keeping scientific claims conservative. Read [references/final-style-spec.md](references/final-style-spec.md) before drawing, [references/ramachandran-workflow.md](references/ramachandran-workflow.md) before structure validation, [references/thesis-text-spec.md](references/thesis-text-spec.md) before writing, and [references/output-contract.md](references/output-contract.md) before creating files.
 

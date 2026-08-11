@@ -1,8 +1,8 @@
-# HXX Cross-order Protein Analysis
+# Cross-order Protein Analysis
 
 面向昆虫蛋白生物信息学分析与毕业论文制图的 Codex Skill。输入目标蛋白的核酸序列、氨基酸序列，以及可选的 CIF/PDB 三维结构后，可按照统一规范完成跨目同源序列筛选、多序列比对、序列一致性分析、最大似然系统发育树、保守结构域、理化性质和 Ramachandran 图分析，并生成可直接整理进毕业论文的中文材料与方法、结果分析和图注。
 
-本 Skill 的绘图规范来源于 OBP、CREB、JHAMT 和 MRJP 四组蛋白分析的多轮修改与定稿，强调数据可追溯、图形紧凑、文字清晰和结论边界准确。
+本 Skill 的绘图规范来源于蛋白 A、蛋白 B、蛋白 C 和蛋白 D 四组匿名测试案例的多轮优化，强调数据可追溯、图形紧凑、文字清晰和结论边界准确。匿名字母仅用于说明工作流程，不对应公开的具体蛋白、物种或研究项目。
 
 ## 主要功能
 
@@ -165,13 +165,13 @@ git clone https://github.com/hx-paper/hxx-cross-order-protein-analysis.git `
 核酸序列：ATG...
 氨基酸序列：M...
 结构文件：C:\path\to\model.cif（可选）
-结果保存到：C:\Users\hxx\Desktop\pro
+结果保存到：C:\path\to\output
 ```
 
 也可以使用自然语言触发，例如：
 
 ```text
-请按照OBP、CREB、JHAMT和MRJP定稿的样式，分析这个昆虫蛋白，
+请按照蛋白A、蛋白B、蛋白C和蛋白D匿名案例定稿的样式，分析这个昆虫蛋白，
 完成跨目比对、进化树、结构域、理化性质和两种颜色的拉氏图，
 并写出毕业论文的材料方法、结果和图注。
 ```
@@ -234,4 +234,3 @@ git clone https://github.com/hx-paper/hxx-cross-order-protein-analysis.git `
 ## Repository
 
 GitHub: <https://github.com/hx-paper/hxx-cross-order-protein-analysis>
-
