@@ -15,7 +15,8 @@ def main() -> None:
     project = root / protein
     subdirs = [
         "analysis", "data/phylogeny", "data/smart_domains", "data/ibs2",
-        "data/source_candidates", "figures", "physicochemical_properties", "scripts",
+        "data/source_candidates", "data/structure_validation", "figures",
+        "physicochemical_properties", "scripts",
     ]
     for subdir in subdirs:
         (project / subdir).mkdir(parents=True, exist_ok=True)
